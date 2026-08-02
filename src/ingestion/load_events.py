@@ -7,13 +7,13 @@ def load_events(path):
         reader = csv.DictReader(file)
         events = [ 
             Event(
-                event_id=int(row["event_id"]),
+                event_id=row["event_id"],
                 user_id=row["user_id"],
                 event_type=row["event_type"],
                 source=row["source"],
                 country=row["country"],
                 device=row["device"],
-                revenue=int(row["revenue"]),
+                revenue=row["revenue"],
                 timestamp=row["timestamp"]
                 )
             for row in reader
