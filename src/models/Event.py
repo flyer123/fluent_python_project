@@ -1,7 +1,7 @@
-from dataclasses import dataclasses
+from dataclasses import dataclass
 
-@dataclass
-class Event(frozen=True):
+@dataclass(frozen=True)
+class Event:
     event_id: int
     user_id: str
     event_type: str

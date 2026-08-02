@@ -1,7 +1,7 @@
 class DataBatch:
 
-    def __init__(self, initial_data=None):
-        self.records = list(initial_data) if initial_data else []
+    def __init__(self, records):
+        self.records = records
 
     def __getitem__(self, item):
         return self.records[item]
@@ -16,4 +16,4 @@ class DataBatch:
         return bool(len(self.records))
 
     def __repr__(self):
-        return f"DataBatch(records={len(self.items!r)})"
+        return f"DataBatch(records={len(self.records)!r})"

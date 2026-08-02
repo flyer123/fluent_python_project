@@ -1,8 +1,8 @@
 from collections import Counter
 
-def purchases_per_device(rows):
+def purchases_per_device(events):
     purchases = []
-    for row in rows:
-        purchases.append(row[6])
+    for event in events:
+        purchases.append(event.device)
     purchases_cnt = Counter(purchases)
     return purchases_cnt
