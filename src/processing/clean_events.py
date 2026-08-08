@@ -1,5 +1,5 @@
 from models.Event import Event
-import re
+
 
 def check_convert(field, type_to_check):
     try:
@@ -8,20 +8,12 @@ def check_convert(field, type_to_check):
         return False
     return True
 
-def check_timestamp(pattern, timestamp):
-    if re.fullmatch(pattern, timestamp):
-        return True
-    else:
-        return False
 
-
-pattern = r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$'
 def clean_events(events):
     event_ids=[]
     cleaned_events = []
     for event in events:
-        if check_timestamp(pattern, event.timestamp) \
-        and check_convert(event.event_id, int) \
+        if check_convert(event.event_id, int) \
         and check_convert(event.revenue, float) \
         and event.event_id not in event_ids:
             event = Event(
