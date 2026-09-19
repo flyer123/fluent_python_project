@@ -134,7 +134,7 @@ event_id,user_id,event_type,source,country,device,revenue,timestamp
 
 ---
 
-# STEP 1 — DataBatch Class
+# STEP 1 — DataBatch Class ✅
 
 Fluent Python:
 
@@ -225,7 +225,7 @@ class DataBatch:
 
 ---
 
-# STEP 2 — CSV Loader
+# STEP 2 — CSV Loader ✅
 
 Fluent Python:
 
@@ -288,7 +288,7 @@ def load_events(path):
 
 ---
 
-# STEP 3 — Aggregation Engine
+# STEP 3 — Aggregation Engine ✅
 
 Fluent Python:
 
@@ -347,7 +347,7 @@ def revenue_per_country(events):
 
 ---
 
-# STEP 4 — Dataclasses
+# STEP 4 — Dataclasses ✅
 
 Fluent Python:
 
@@ -421,7 +421,7 @@ class Event:
 
 ---
 
-# STEP 5 — Functional Pipeline
+# STEP 5 — Functional Pipeline ✅
 
 Fluent Python:
 
@@ -472,7 +472,7 @@ def run_pipeline(data, steps):
 
 ---
 
-# STEP 6 — Type Hints
+# STEP 6 — Type Hints 🚧
 
 Fluent Python:
 

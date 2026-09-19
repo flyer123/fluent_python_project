@@ -1,10 +1,20 @@
+from models.Event import Event
+from models.EnrichedEvent import EnrichedEvent
+from collections.abc import Callable
+from typing import TypeVar
+
+TSelf=TypeVar("TSelf", bound="Pipeline")
+
+
+
+
 class Pipeline:
     """A pipeline to process data with any given number of function"""
 
     def __init__(self, *steps):
         self.steps = list(steps)
 
-    def add_step(self, func):
+    def add_step(self: TSelf, func: Callable[[list[Event]], list[Event] | list[EnrichedEvent]]) -> TSelf:
         """Dinamycally adding new function"""
         if not callable(func):
             raise TypeError("Pipeline steps must be callable.")

@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime, date
 
 @dataclass(frozen=True)
 class Event:
@@ -9,4 +10,4 @@ class Event:
     country: str
     device: str
     revenue: float
-    timestamp: str
+    timestamp: datetime

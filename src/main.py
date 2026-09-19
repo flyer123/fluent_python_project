@@ -12,38 +12,13 @@ from processing.Pipeline import Pipeline
 
 events = load_events("../data/events.csv")
 
+
 my_pipeline = Pipeline(clean_events)
 my_pipeline.add_step(validate_events)
 my_pipeline.add_step(enrich_events)
 
 enriched_events = my_pipeline(events)
 
-# print(len(events))
-
-# print(events[:3])
-
-# cleaned_events = clean_events(events)
-""" print(len(cleaned_events))
-
-print(cleaned_events[:3])
-print(events_per_country(cleaned_events))
-print(purchases_per_device(cleaned_events))
-print(revenue_per_country(cleaned_events))
-print(unique_users(cleaned_events))
-print(sort_events_by_revenue(cleaned_events))
-print(group_by_event_type(cleaned_events))  """
-
-
-# validated_events = validate_events(cleaned_events )
-
-# enriched_events = enrich_events(validated_events)
-
 print(len(enriched_events))
+print(enriched_events)
 
-print(enriched_events[:3])
-print(events_per_country(enriched_events))
-print(purchases_per_device(enriched_events))
-print(revenue_per_country(enriched_events))
-print(unique_users(enriched_events))
-print(sort_events_by_revenue(enriched_events))
-print(group_by_event_type(enriched_events)) 
