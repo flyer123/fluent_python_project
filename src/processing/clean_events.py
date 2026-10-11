@@ -1,10 +1,12 @@
 from models.Event import Event
-from typing import Any
+from .decorators import timer, log_execution, retry
 
 
 
 
-
+@log_execution
+@timer
+@retry()
 def clean_events(events: list[Event]) -> list[Event]:
     """Clean each object in events list:
     currently remove whitespaces at both ends of text fields and make them lower case.

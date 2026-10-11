@@ -1,7 +1,7 @@
 from models.Event import Event
-import re
 import typing
 from datetime import datetime, date
+from .decorators import timer, log_execution, retry
 
 
 
@@ -34,6 +34,9 @@ def check_timestamp(timestamp: datetime) -> bool:
         return False
 
 
+@log_execution
+@timer
+@retry()
 def validate_events(events: list[Event]) -> list[Event]:
     """Validate fields of every object in events
 

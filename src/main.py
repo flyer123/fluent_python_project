@@ -10,6 +10,7 @@ from processing.validate_events import validate_events
 from processing.enrich_events import enrich_events
 from processing.Pipeline import Pipeline
 
+
 events = load_events("../data/events.csv")
 
 
@@ -21,4 +22,5 @@ enriched_events = my_pipeline(events)
 
 print(len(enriched_events))
 print(enriched_events)
+
 

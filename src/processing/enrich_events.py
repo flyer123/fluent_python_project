@@ -1,7 +1,12 @@
 from models.Event import Event
 from models.EnrichedEvent import EnrichedEvent
+from .decorators import timer, log_execution, retry
 
 
+
+@log_execution
+@timer
+@retry()
 def enrich_events(events: list[Event]) -> list[EnrichedEvent]:
     """ Create list of EnrichedEvent objects
 
